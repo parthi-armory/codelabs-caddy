@@ -1,4 +1,3 @@
-  
 armorycodelabs.com {
     tls parthi.geo@gmail.com
     git {
@@ -14,8 +13,18 @@ armorycodelabs.com {
         rotate_keep 50   # Keep at most 20 log files
         rotate_compress  # Compress rotated log files in gzip format
     }
+    errors visible {
+        rotate_size 100
+        rorate_Age  15 
+        rotate_keep 50
+        rorate_compress
+    } 
     redir 301 {
         if {scheme} is http
         /  https://{host}{uri}
+    }
+    timeouts {
+        read 10s
+        write 20s
     }
 }
