@@ -15,9 +15,9 @@ armorycodelabs.com {
     }
     errors visible {
         rotate_size 100
-        rorate_Age  15 
+        rotate_age  15 
         rotate_keep 50
-        rorate_compress
+        rotate_compress
     } 
     redir 301 {
         if {scheme} is http
