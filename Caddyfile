@@ -1,0 +1,21 @@
+  
+armorycodelabs.com {
+    tls parthi.geo@gmail.com
+    git {
+        repo https://github.com/parthi-armory/codelabs.git
+        path /home/parthiban_srinivasan/site/
+        interval 60
+        hook /github_hook
+    }
+    root /home/parthiban_srinivasan/site/
+    log /home/parthiban_srinivasan/log/caddy.access.log {
+        rotate_size 100  # Rotate after 50 MB
+        rotate_age  7    # Keep rotated files for 90 days
+        rotate_keep 50   # Keep at most 20 log files
+        rotate_compress  # Compress rotated log files in gzip format
+    }
+    redir 301 {
+        if {scheme} is http
+        /  https://{host}{uri}
+    }
+}
