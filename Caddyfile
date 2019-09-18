@@ -1,19 +1,20 @@
 armorycodelabs.com {
-    tls parthi.geo@gmail.com
+    tls parthi.geo@gmail.com 
     git {
         repo https://github.com/parthi-armory/codelabs.git
         path /home/parthiban_srinivasan/site/
         interval 60
         hook /github_hook
     }
-    root /home/parthiban_srinivasan/site/
+    root /home/parthiban_srinivasan/site/ 
+    basicauth /home/parthiban_srinivasan/site armoryshield armorysesame 
     log /home/parthiban_srinivasan/log/caddy.access.log {
         rotate_size 100  # Rotate after 50 MB
         rotate_age  7    # Keep rotated files for 90 days
         rotate_keep 50   # Keep at most 20 log files
         rotate_compress  # Compress rotated log files in gzip format
     }
-    errors visible {
+    errors /home/parthiban_srinivasan/log/caddy.error.log {
         rotate_size 100
         rotate_age  15 
         rotate_keep 50
@@ -24,7 +25,8 @@ armorycodelabs.com {
         /  https://{host}{uri}
     }
     timeouts {
-        read 10s
-        write 20s
+        read 20s
+        write 60s
     }
+    pprof
 }
