@@ -7,7 +7,7 @@ sudo apt install curl
 # install caddy 
 
 #curl https://getcaddy.com | bash -s personal
-curl https://getcaddy.com | bash -s personal consul,hook.service,http.authz,http.cache,http.cors,http.expires,http.git,http.login,http.prometheus,http.pubsub,http.ratelimit,redis,tls.dns.dnspod,tls.dns.googlecloud
+curl https://getcaddy.com | bash -s personal consul,hook.service,http.authz,http.cache,http.on,http.cors,http.expires,http.git,http.login,http.prometheus,http.pubsub,http.ratelimit,redis,tls.dns.dnspod,tls.dns.googlecloud
 
 # clone the codelabs repo
 # git clone https://github.com/parthi-armory/codelabs.git
